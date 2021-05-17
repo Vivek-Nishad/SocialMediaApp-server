@@ -6,22 +6,20 @@ module.exports.validateRegisterInput = (
 ) => {
   const errors = {};
   if (username.trim() === "") {
-    errors.username = "Username must not be empty, abey username dal chutiye";
+    errors.username = "Username must not be empty";
   }
   if (email.trim() === "") {
-    errors.email = "Email must not be empty, abey chutiye Email enter kar";
+    errors.email = "Email must not be empty";
   } else {
-    const regEx = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/;
+    const regEx =
+      /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/;
     if (!email.match(regEx)) {
-      errors.email =
-        "Email must be a valid email address, abey yedi gaand valid email enter kar";
+      errors.email = "Email must be a valid email address";
     }
     if (password === "") {
-      errors.password =
-        "Password must not be empty, Password bhi blank chood diya BC";
+      errors.password = "Password must not be empty";
     } else if (password !== confirmPassword) {
-      errors.confirmPassword =
-        "Passwords must match, ABEY chutiye same password bhi enter nahi kar sakta kya tu 😠 ";
+      errors.confirmPassword = "Passwords must match";
     }
   }
 
@@ -34,10 +32,10 @@ module.exports.validateRegisterInput = (
 module.exports.validateLoginInput = (username, password) => {
   const errors = {};
   if (username.trim() === "") {
-    errors.username = "Username must not be empty, username enter kar ba";
+    errors.username = "Username must not be empty";
   }
   if (password.trim() === "") {
-    errors.password = "Password must not be empty, katai chutiye insaan ho aap";
+    errors.password = "Password must not be empty";
   }
 
   return {

@@ -10,8 +10,7 @@ module.exports = {
       if (body.trim() === "") {
         throw new UserInputError("Empty Comment", {
           errors: {
-            body:
-              "Comment body must not be empty, blank comment 😠 majak karra kya be lodu",
+            body: "Comment body must not be empty, blank comment 😠 majak karra kya be ❤️du",
           },
         });
       }
